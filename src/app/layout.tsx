@@ -1,35 +1,37 @@
 import './globals.css';
 import { ReactNode } from 'react';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: "Cakwe Medan Bagojo - Cakwe Gurih Halal di Kranji Bekasi",
+export const metadata: Metadata = {
+  metadataBase: new URL('https://cakwemedan.vercel.app'),
+  title: 'Cakwe Medan Bagojo - Cakwe Gurih Halal di Kranji Bekasi',
   description:
-    "Cakwe Medan Bagojo, jajanan halal khas Kranji Bekasi. Cakwe gurih, bakso goreng ayam udang, dan es liang teh Medan, fresh setiap hari!",
+    'Cakwe Medan Bagojo, jajanan halal khas Kranji Bekasi. Cakwe gurih, bakso goreng ayam udang, dan es liang teh Medan, fresh setiap hari!',
   alternates: {
-    canonical: "https://cakwemedan.vercel.app/",
+    canonical: 'https://cakwemedan.vercel.app/',
   },
   openGraph: {
-    type: "website",
-    url: "https://cakwemedan.vercel.app/",
-    title: "Cakwe Medan Bagojo - Cakwe Gurih Halal di Kranji Bekasi",
+    type: 'website',
+    url: 'https://cakwemedan.vercel.app/',
+    title: 'Cakwe Medan Bagojo - Cakwe Gurih Halal di Kranji Bekasi',
     description:
-      "Cakwe Medan Bagojo, jajanan halal khas Kranji Bekasi. Cakwe gurih, bakso goreng ayam udang, dan es liang teh Medan, fresh setiap hari!",
+      'Cakwe Medan Bagojo, jajanan halal khas Kranji Bekasi. Cakwe gurih, bakso goreng ayam udang, dan es liang teh Medan, fresh setiap hari!',
     images: [
       {
-        url: "/images/cakwe-medan.webp",
+        url: '/images/cakwe-medan.webp',
         width: 1200,
         height: 630,
-        alt: "Cakwe Medan",
+        alt: 'Cakwe Medan',
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    site: "@cakwebagojo",
-    title: "Cakwe Medan Bagojo - Cakwe Gurih Halal di Kranji Bekasi",
+    card: 'summary_large_image',
+    site: '@cakwebagojo',
+    title: 'Cakwe Medan Bagojo - Cakwe Gurih Halal di Kranji Bekasi',
     description:
-      "Cakwe Medan Bagojo, jajanan halal khas Kranji Bekasi. Cakwe gurih, bakso goreng ayam udang, dan es liang teh Medan, fresh setiap hari!",
-    images: ["/images/cakwe-medan.webp"],
+      'Cakwe Medan Bagojo, jajanan halal khas Kranji Bekasi. Cakwe gurih, bakso goreng ayam udang, dan es liang teh Medan, fresh setiap hari!',
+    images: ['/images/cakwe-medan.webp'],
   },
 };
 
@@ -46,7 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "@context": "https://schema.org",
               "@type": "Restaurant",
               name: "Cakwe Medan Bagojo",
-              image: "/images/cakwe-medan.webp",
+              image: "https://cakwemedan.vercel.app/images/cakwe-medan.webp",
               "@id": "https://cakwemedan.vercel.app",
               url: "https://cakwemedan.vercel.app",
               telephone: "+62-812-3456-7890",
@@ -67,7 +69,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     "Thursday",
                     "Friday",
                     "Saturday",
-                    "Sunday",
+                    "Sunday"
                   ],
                   opens: "12:00",
                   closes: "21:30",
@@ -78,9 +80,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "4.9",
-                reviewCount: "159988",
-              },
-            }),
+                reviewCount: "159988"
+              }
+            })
           }}
         />
       </head>
