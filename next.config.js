@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  
   reactStrictMode: true,
   images: {
     unoptimized: true,
   },
-  trailingSlash: true, // Opsional: penting untuk export agar URL folder benar
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
