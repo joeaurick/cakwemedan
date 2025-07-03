@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  trailingSlash: false, // jangan pakai true kalau tidak export statis
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
