@@ -16,6 +16,8 @@ type Product = {
 };
 
 export default function Home() {
+  console.log("✅ Home Page Loaded");
+  
   const [cartItems, setCartItems] = useState<Product[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("Semua");
