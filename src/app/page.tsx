@@ -7,12 +7,20 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import PromoBanner from "@/components/PromoBanner";
 
+type Product = {
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+  category?: string;
+};
+
 export default function Home() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<Product[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("Semua");
 
-  const addToCart = (product) => {
+  const addToCart = (product: Product) => {
     setCartItems([...cartItems, product]);
   };
 
