@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -6,7 +5,7 @@ import Image from "next/image";
 interface ProductCardProps {
   name: string;
   description: string;
-  image: string;
+  image: string; // format: "/images/namafile.webp"
   price: number;
   onOrder: () => void;
 }
@@ -18,17 +17,15 @@ export default function ProductCard({
   price,
   onOrder,
 }: ProductCardProps) {
-  const [imgSrc, setImgSrc] = useState(image); // image: "/images/nama-gambar.webp"
-
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden">
       <Image
-        src={imgSrc}
+        src={image}
         alt={name}
         width={400}
         height={300}
         className="w-full h-48 object-cover"
-        onError={() => setImgSrc("/images/default.webp")}
+        unoptimized // gunakan ini agar image tidak harus dari remote
       />
       <div className="p-4 space-y-2">
         <h3 className="text-lg font-semibold">{name}</h3>
