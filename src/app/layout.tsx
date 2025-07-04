@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       'Cakwe Medan Bagojo, jajanan halal khas Kranji Bekasi. Cakwe gurih, bakso goreng ayam udang, dan es liang teh Medan, fresh setiap hari!',
     images: [
       {
-        url: '/images/cakwe-medan.webp',
+        url: '/images/cakwe-medan.jpg',
         width: 1200,
         height: 630,
         alt: 'Cakwe Medan',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Cakwe Medan Bagojo - Cakwe Gurih Halal di Kranji Bekasi',
     description:
       'Cakwe Medan Bagojo, jajanan halal khas Kranji Bekasi. Cakwe gurih, bakso goreng ayam udang, dan es liang teh Medan, fresh setiap hari!',
-    images: ['/images/cakwe-medan.webp'],
+    images: ['/images/cakwe-medan.jpg'],
   },
 };
 
@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "@context": "https://schema.org",
               "@type": "Restaurant",
               name: "Cakwe Medan Bagojo",
-              image: "https://cakwemedan.vercel.app/images/cakwe-medan.webp",
+              image: "https://cakwemedan.vercel.app/images/cakwe-medan.jpg",
               "@id": "https://cakwemedan.vercel.app",
               url: "https://cakwemedan.vercel.app",
               telephone: "+62-812-3456-7890",
