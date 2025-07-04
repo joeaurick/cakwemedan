@@ -27,8 +27,8 @@ export default function ProductCard({
         alt={name}
         width={400}
         height={300}
-        onError={() => setImgSrc("/images/default.webp")}
         className="w-full h-48 object-cover"
+        onError={() => setImgSrc("/images/default.webp")} // fallback manual
       />
       <div className="p-4 space-y-2">
         <h3 className="text-lg font-semibold">{name}</h3>
