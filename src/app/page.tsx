@@ -1,9 +1,7 @@
 "use client"
 import { useState } from "react"
 import Image from "next/image"
-import ProductCard from "@/components/ProductCard"
-import { Star, MapPin, ThumbsUp, Soup } from "lucide-react"
-import PromoBanner from "@/components/PromoBanner"
+import { Star, MapPin, Search, Menu, ChevronDown, ChevronRight } from "lucide-react"
 
 type Product = {
   name: string
@@ -14,269 +12,199 @@ type Product = {
 }
 
 export default function Home() {
-  console.log("✅ Home Page Loaded")
   const [cartItems, setCartItems] = useState<Product[]>([])
-  const [isCartOpen, setIsCartOpen] = useState(false)
-  const [activeCategory, setActiveCategory] = useState("Semua")
 
   const addToCart = (product: Product) => {
     setCartItems([...cartItems, product])
   }
 
-  const getTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price, 0)
-  }
-
-  const products = [
-    {
-      name: "Cakwe Medan",
-      description: "Cakwe gurih dan renyah khas Medan Asli lembut dan tidak keras.",
-      image: "/images/cakwe-medan.jpg",
-      price: 5000,
-      category: "Gorengan",
-    },
-    {
-      name: "Bakso Goreng",
-      description: "Bakso goreng isi ayam udang, dengan tekstur sedikit kopong.",
-      image: "/images/bakso-goreng-ayam-udang.jpg",
-      price: 5000,
-      category: "Gorengan",
-    },
-    {
-      name: "Es Liang Teh",
-      description: "Minuman herbal khas Medan, dengan rasa manis yang khas.",
-      image: "/images/es-liang-teh.jpg",
-      price: 5000,
-      category: "Minuman",
-    },
-  ]
-
-  const filteredProducts =
-    activeCategory === "Semua" ? products : products.filter((product) => product.category === activeCategory)
-
   const topPicks = [
     {
       name: "Cakwe Medan",
-      description: "Cakwe gurih dan renyah khas Medan Asli lembut dan tidak keras.",
+      description: "Cakwe gurih dan renyah khas Medan",
       image: "/images/cakwe-medan.jpg",
       price: 5000,
     },
     {
       name: "Bakso Goreng",
-      description: "Bakso goreng isi ayam udang, dengan tekstur sedikit kopong.",
+      description: "Bakso goreng isi ayam udang",
       image: "/images/bakso-goreng-ayam-udang.jpg",
       price: 5000,
     },
     {
       name: "Es Liang Teh",
-      description: "Minuman herbal khas Medan, dengan rasa manis yang khas.",
+      description: "Minuman herbal khas Medan",
       image: "/images/es-liang-teh.jpg",
       price: 5000,
     },
   ]
 
   return (
-    <main className="min-h-screen overflow-x-hidden flex flex-col bg-gradient-to-b from-blue-100 to-white">
-      {/* Header - Fixed di paling atas tanpa promo banner */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-        <div className="px-3 py-2 max-w-full">
-          {/* Desktop Layout */}
-          <div className="hidden sm:block">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-3">
-                <Image
-                  src="/images//logo-bagojo.png"
-                  alt="Logo Bagojo"
-                  width={32}
-                  height={32}
-                  className="h-8 w-auto"
-                />
-                <div>
-                  <h1 className="text-sm font-bold text-gray-800">Cakwe Medan Kranji</h1>
-                  <p className="text-xs text-red-500">🔴 Tutup – Buka 12.00-21.00</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="text-xs text-gray-500">Bekasi / Cakwe Medan</div>
-                <span className="bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-semibold text-xs">
-                  Super Nagih
-                </span>
-              </div>
+    <main className="min-h-screen bg-gray-50">
+      {/* Spacer untuk fixed headers */}
+      <div className="h-[180px]"></div>
+
+      {/* App Banner - Fixed */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gray-50 px-4 py-3 flex items-center justify-between border-b border-gray-200">
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center">
+            <MapPin className="w-4 h-4 text-white" />
+          </div>
+          <span className="text-sm font-medium text-gray-800">Switch to the app?</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <button className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium">Open app</button>
+          <button className="text-gray-400 text-lg">×</button>
+        </div>
+      </div>
+
+      {/* Header - Fixed */}
+      <div className="fixed top-[52px] left-0 right-0 z-40 bg-white px-4 py-4 flex items-center justify-between border-b border-gray-200">
+        <div className="flex items-center gap-3">
+          <Menu className="w-6 h-6 text-gray-700" />
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-sm">B</span>
             </div>
-            <div className="flex items-center justify-center gap-4 text-xs text-gray-600 border-t pt-2">
-              <div className="flex items-center gap-1">
-                <Star className="text-yellow-500 w-3 h-3" />
-                <span className="font-semibold">4.7</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <MapPin className="text-red-500 w-3 h-3" />
-                <span>4.66 km</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <ThumbsUp className="text-red-500 w-3 h-3" />
-                <span>100+ ratings</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Soup className="text-red-500 w-3 h-3" />
-                <span>Fresh</span>
+            <span className="font-bold text-xl text-gray-800">BAGOJO</span>
+          </div>
+        </div>
+        <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+          <Search className="w-5 h-5 text-green-600" />
+        </div>
+      </div>
+
+      {/* Location Selector - Fixed */}
+      <div className="fixed top-[116px] left-0 right-0 z-30 px-4 py-4 bg-white border-b border-gray-200">
+        <div className="flex items-center justify-between bg-gray-50 rounded-full px-4 py-3">
+          <div className="flex items-center gap-2">
+            <MapPin className="w-4 h-4 text-red-500" />
+            <span className="font-medium text-gray-800">Bekasi</span>
+          </div>
+          <ChevronDown className="w-4 h-4 text-gray-500" />
+        </div>
+      </div>
+
+      {/* Restaurant Header - Scrollable */}
+      <div className="bg-white px-4 py-4 mt-4">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/images/logo-bagojo.png"
+              alt="Logo Bagojo"
+              width={56}
+              height={56}
+              className="w-14 h-14 rounded-lg"
+            />
+            <div>
+              <h1 className="text-xl font-bold text-gray-800">Cakwe Medan Kranji</h1>
+              <div className="flex items-center gap-2 mt-1">
+                <span className="bg-orange-600 text-white px-2 py-1 rounded text-xs font-medium">Super Nagih</span>
+                <span className="text-sm text-gray-600">Fast food, Snacks</span>
               </div>
             </div>
           </div>
+          <ChevronRight className="w-5 h-5 text-gray-400" />
+        </div>
 
-          {/* Mobile Layout - Ultra Compact & Clean */}
-          <div className="block sm:hidden">
-            <div className="flex items-center justify-between py-1">
-              {/* Left side - Logo & Info */}
-              <div className="flex items-center gap-2 flex-1 min-w-0">
-                <Image
-                  src="/images/logo-bagojo.png"
-                  alt="Logo Bagojo"
-                  width={28}
-                  height={28}
-                  className="h-7 w-7 flex-shrink-0"
-                />
-                <div className="min-w-0 flex-1">
-                  <h1 className="text-sm font-bold text-gray-800 truncate">Cakwe Medan Kranji</h1>
-                  <div className="flex items-center gap-3 text-xs">
-                    <span className="text-red-500 flex items-center gap-1">
-                      🔴 <span className="hidden xs:inline">Tutup</span>
-                    </span>
-                    <div className="flex items-center gap-1">
-                      <Star className="text-yellow-500 w-3 h-3" />
-                      <span className="font-semibold">4.9</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="text-red-500 w-3 h-3" />
-                      <span className="text-gray-600">4.66km</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right side - Badge */}
-              <div className="flex-shrink-0 ml-2">
-                <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-semibold text-xs whitespace-nowrap">
-                  Super Nagih
-                </span>
-              </div>
+        {/* Restaurant Stats - Exact GoFood Style */}
+        <div className="grid grid-cols-4 gap-1 text-center">
+          <div>
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <Star className="w-4 h-4 text-yellow-500 fill-current" />
+              <span className="font-bold text-gray-800">4.8</span>
             </div>
+            <span className="text-xs text-green-600 font-medium">See reviews</span>
+          </div>
+          <div>
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <MapPin className="w-4 h-4 text-red-500" />
+              <span className="font-bold text-gray-800">4.74 km</span>
+            </div>
+            <span className="text-xs text-gray-600">Distance</span>
+          </div>
+          <div>
+            <div className="mb-1">
+              <span className="font-bold text-gray-800">$$$</span>
+              <span className="text-gray-300">$</span>
+            </div>
+            <span className="text-xs text-gray-600">5k-10k</span>
+          </div>
+          <div>
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <div className="w-4 h-4 bg-green-600 rounded-full flex items-center justify-center">
+                <span className="text-white text-xs font-bold">✓</span>
+              </div>
+              <span className="font-bold text-gray-800">Halal</span>
+            </div>
+            <span className="text-xs text-gray-600">Certified</span>
           </div>
         </div>
       </div>
 
-      {/* Spacer untuk header */}
-      <div className="h-[70px] sm:h-[100px]"></div>
+      {/* The People's Favorites - Exact GoFood Style */}
+      <div className="bg-white px-4 py-6 mt-4">
+        <h2 className="text-lg font-bold text-gray-800 mb-6">Cemilan's favorites</h2>
 
-      {/* Promo Banner - Dipindah ke bawah header */}
-      <div className="w-full">
-        <PromoBanner />
-      </div>
-
-      <div className="overflow-x-auto whitespace-nowrap py-4 px-4">
-        <div className="container">
-          {["Semua", "Gorengan", "Minuman"].map((cat, idx) => (
-            <button
-              key={idx}
-              className={`inline-block text-sm px-4 py-2 mx-1 rounded-full border ${activeCategory === cat ? "bg-blue-600 text-white" : "border-blue-600 text-blue-600"} hover:bg-blue-600 hover:text-white transition`}
-              onClick={() => setActiveCategory(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="container py-6 space-y-6">
-        <h2 className="text-lg font-semibold text-gray-800">Cemilan's Top Picks</h2>
-        <div className="flex overflow-x-auto space-x-4 py-2">
+        <div className="space-y-6">
           {topPicks.map((product, index) => (
-            <div key={index} className="flex-shrink-0 w-48">
-              <ProductCard
-                name={product.name}
-                description={product.description}
-                image={product.image}
-                price={product.price}
-                onOrder={() => addToCart(product)}
-              />
+            <div key={index} className="flex items-start justify-between">
+              <div className="flex-1 pr-4">
+                <h3 className="font-semibold text-gray-800 text-base mb-1">{product.name}</h3>
+                <p className="text-sm text-gray-600 mb-3 leading-relaxed">{product.description}</p>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-gray-800">{product.price.toLocaleString("id-ID")}</span>
+                </div>
+                <div className="flex items-center gap-1 mt-2 text-xs text-gray-500">
+                  <span>🍽️</span>
+                  <span>Customizable</span>
+                </div>
+              </div>
+              <div className="flex flex-col items-end gap-3">
+                <div className="relative w-24 h-24">
+                  <Image
+                    src={product.image || "/placeholder.svg"}
+                    alt={product.name}
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <button
+                  onClick={() => addToCart(product)}
+                  className="border-2 border-green-600 text-green-600 px-6 py-2 rounded-full text-sm font-medium hover:bg-green-50 transition-colors"
+                >
+                  Add
+                </button>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="container py-6 space-y-6">
-        <h2 className="text-lg font-semibold text-gray-800">Menu Kategori: {activeCategory}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {filteredProducts.map((product, index) => (
-            <ProductCard
-              key={index}
-              name={product.name}
-              description={product.description}
-              image={product.image}
-              price={product.price}
-              onOrder={() => addToCart(product)}
-            />
-          ))}
-        </div>
+      {/* Bottom Menu Button - Exact GoFood Style */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4">
+        <button className="w-full bg-red-600 text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2">
+          <Menu className="w-5 h-5" />
+          Menu
+        </button>
       </div>
 
-      <div className="container py-6">
-        <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">Lokasi Cakwe Medan Kami</h2>
-        <div className="w-full h-64">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31729.99939959203!2d106.94790287910156!3d-6.230746700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d924738095b%3A0x8d2a3f42d3a275c2!2sBakso%20Goreng%20Ayam%20Udang%20-%20BAGOJO!5e0!3m2!1sid!2sth!4v1751563720287!5m2!1sid!2sth"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="rounded-xl shadow"
-          ></iframe>
-        </div>
-      </div>
+      {/* Spacer for fixed bottom button */}
+      <div className="h-20"></div>
 
-      <footer className="bg-[#ee3131] text-white py-10 mt-10 text-center text-sm">
-        <div className="container space-y-4">
-          <h3 className="text-lg sm:text-xl font-bold">
-            Gak perlu repot lagi buat ngemanjain lidahmu, tinggal ketik BAGOJO di Google kesayangan!
-          </h3>
-          <p className="text-sm">
-            Nikmati BAKSO GORENG Ayam Udang dan CAKWE MEDAN rasa PREMIUM. #Makin di Gigit Makin Nagih!
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-              alt="Get it on Google Play"
-              width={120}
-              height={40}
-              className="h-10"
-            />
-            <Image
-              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-              alt="Download on the App Store"
-              width={120}
-              height={40}
-              className="h-10"
-            />
-          </div>
-          <div className="text-xs text-white/80 mt-6">
-            © 2025 BAGOJO | Cakwe Medan Bagojo berlokasi di Kranji, Bekasi Barat.
-          </div>
-        </div>
-      </footer>
-
+      {/* WhatsApp Button */}
       <a
         href="https://wa.me/6281299686378"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 z-50 animate-bounce bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg"
+        className="fixed bottom-24 right-4 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg"
       >
         <Image
           src="/images/whatsapp.png"
           alt="WhatsApp"
-          width={32}
-          height={32}
-          className="h-8 w-8"
+          width={24}
+          height={24}
+          className="h-6 w-6"
         />
       </a>
     </main>
