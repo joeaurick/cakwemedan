@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ProductCard } from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard";
 import { ShoppingCart, X, Star, MapPin, ThumbsUp, Soup, Wallet } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
@@ -34,21 +34,21 @@ export default function Home() {
     {
       name: "Cakwe Medan",
       description: "Cakwe gurih dan renyah khas Medan Asli lembut dan tidak keras.",
-      image: "cakwe-medan.webp",
+      image: "/images/cakwe-medan.webp",
       price: 5000,
       category: "Gorengan",
     },
     {
       name: "Bakso Goreng",
       description: "Bakso goreng isi ayam udang, dengan tekstur sedikit kopong.",
-      image: "bakso-goreng-ayam-udang.webp",
+      image: "/images/bakso-goreng-ayam-udang.webp",
       price: 5000,
       category: "Gorengan",
     },
     {
       name: "Es Liang Teh",
       description: "Minuman herbal khas Medan, dengan rasa manis yang khas.",
-      image: "es-liang-teh.webp",
+      image: "/images/es-liang-teh.webp",
       price: 5000,
       category: "Minuman",
     }
@@ -62,19 +62,19 @@ export default function Home() {
     {
       name: "Cakwe Medan",
       description: "Cakwe gurih dan renyah khas Medan Asli lembut dan tidak keras.",
-      image: "cakwe-medan.webp",
+      image: "/images/cakwe-medan.webp",
       price: 5000,
     },
     {
       name: "Bakso Goreng",
       description: "Bakso goreng isi ayam udang, dengan tekstur sedikit kopong.",
-      image: "bakso-goreng-ayam-udang.webp",
+      image: "/images/bakso-goreng-ayam-udang.webp",
       price: 5000,
     },
     {
       name: "Es Liang Teh",
       description: "Minuman herbal khas Medan, dengan rasa manis yang khas.",
-      image: "es-liang-teh.webp",
+      image: "/images/es-liang-teh.webp",
       price: 5000,
     }
   ];
