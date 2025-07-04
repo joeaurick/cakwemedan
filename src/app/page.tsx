@@ -54,21 +54,21 @@ export default function Home() {
       rating: 5,
       comment: "Cakwe medan nya enak banget! Gurih dan renyah, pasti balik lagi",
       date: "2 hari lalu",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/images/icon-public.png",
     },
     {
       name: "Budi Santoso",
       rating: 5,
       comment: "Bakso goreng isi ayam udang juara! Porsi besar, harga terjangkau",
       date: "1 minggu lalu",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/images/icon-public.png",
     },
     {
       name: "Maya Putri",
       rating: 4,
       comment: "Es liang teh nya seger banget, cocok buat cuaca panas",
       date: "3 hari lalu",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/images/icon-public.png",
     },
   ]
 
@@ -131,9 +131,9 @@ export default function Home() {
             <Image
               src="/images/logo-bagojo.png"
               alt="Logo Bagojo"
-              width={28}
-              height={28}
-              className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg"
+              width={120}
+              height={56}
+              className="w-15 h-12 sm:w-8 sm:h-8 rounded-lg"
             />
           </div>
         </div>
@@ -518,7 +518,7 @@ export default function Home() {
         className="fixed bottom-[84px] sm:bottom-24 right-3 sm:right-4 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 min-w-[48px] min-h-[48px] flex items-center justify-center whatsapp-glow transition-all duration-300 transform hover:scale-110 active:scale-95"
       >
         <Image
-          src="/placeholder.svg?height=20&width=20"
+          src="/images/whatsapp.png"
           alt="WhatsApp"
           width={20}
           height={20}
