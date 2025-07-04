@@ -1,7 +1,7 @@
+import { useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { useState } from "react";
 
 interface ProductCardProps {
   name: string;
@@ -18,7 +18,7 @@ export default function ProductCard({
   price,
   onOrder,
 }: ProductCardProps) {
-  const [imgSrc, setImgSrc] = useState(image);
+  const [imgSrc, setImgSrc] = useState(image); // image: "/images/nama-gambar.webp"
 
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden">
