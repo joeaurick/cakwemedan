@@ -1,6 +1,7 @@
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useState } from "react";
 
 interface ProductCardProps {
   name: string;
@@ -17,17 +18,17 @@ export default function ProductCard({
   price,
   onOrder,
 }: ProductCardProps) {
+  const [imgSrc, setImgSrc] = useState(image);
+
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden">
       <Image
-        src={image}
+        src={imgSrc}
         alt={name}
         width={400}
         height={300}
         className="w-full h-48 object-cover"
-        onError={(e) => {
-          e.currentTarget.src = "/images/default.webp"; // fallback jika gambar gagal dimuat
-        }}
+        onError={() => setImgSrc("/images/default.webp")}
       />
       <div className="p-4 space-y-2">
         <h3 className="text-lg font-semibold">{name}</h3>
