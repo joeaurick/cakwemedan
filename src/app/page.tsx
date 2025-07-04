@@ -92,9 +92,9 @@ export default function Home() {
             <Image
               src="/images/logo-bagojo.png"
               alt="Logo Bagojo"
-              width={56}
+              width={120}
               height={56}
-              className="w-14 h-14 rounded-lg"
+              className="w-18 h-14 rounded-lg"
             />
             <div>
               <h1 className="text-xl font-bold text-gray-800">Cakwe Medan Kranji</h1>
