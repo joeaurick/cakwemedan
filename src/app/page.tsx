@@ -73,7 +73,7 @@ export default function Home() {
   ]
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-sky-50">
       {/* Custom CSS for animations */}
       <style jsx>{`
         @keyframes shimmer {
@@ -109,7 +109,7 @@ export default function Home() {
           background: linear-gradient(
             90deg,
             transparent,
-            rgba(255, 255, 255, 0.3),
+            rgba(255, 255, 255, 0.4),
             transparent
           );
           animation: shimmer 2s infinite;
@@ -124,9 +124,9 @@ export default function Home() {
       <div className="h-[120px] sm:h-[128px]"></div>
 
       {/* Header - Fixed */}
-      <div className="fixed top-0 left-0 right-0 z-40 bg-white px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between border-b border-gray-200">
+      <div className="fixed top-0 left-0 right-0 z-40 bg-white px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between border-b border-sky-200">
         <div className="flex items-center gap-2 sm:gap-3">
-          <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
+          <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-sky-600" />
           <div className="flex items-center gap-2">
             <Image
               src="/images/logo-bagojo.png"
@@ -140,35 +140,13 @@ export default function Home() {
       </div>
 
       {/* Location Selector - Fixed */}
-      <div className="fixed top-[52px] sm:top-[64px] left-0 right-0 z-30 px-3 sm:px-4 py-3 sm:py-4 bg-white border-b border-gray-200">
-        <div className="flex items-center justify-between bg-gray-50 rounded-full px-3 sm:px-4 py-2 sm:py-3">
+      <div className="fixed top-[52px] sm:top-[64px] left-0 right-0 z-30 px-3 sm:px-4 py-3 sm:py-4 bg-white border-b border-sky-200">
+        <div className="flex items-center justify-between bg-sky-50 rounded-full px-3 sm:px-4 py-2 sm:py-3">
           <div className="flex items-center gap-2">
-            <MapPin className="w-4 h-4 text-red-500" />
-            <span className="font-medium text-gray-800 text-sm sm:text-base">Bekasi</span>
+            <MapPin className="w-4 h-4 text-sky-500" />
+            <span className="font-medium text-sky-800 text-sm sm:text-base">Bekasi</span>
           </div>
-          <ChevronDown className="w-4 h-4 text-gray-500" />
-        </div>
-      </div>
-
-      {/* Hero Banner Section */}
-      <div className="relative bg-white px-3 sm:px-4 py-4 sm:py-6 mt-2 sm:mt-4 overflow-hidden">
-        <div className="relative">
-          <div className="bg-gradient-to-r from-blue-600 to-black rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white relative overflow-hidden">
-            <div className="relative z-10">
-              <div className="mb-3 sm:mb-4">
-                <span className="bg-white bg-opacity-20 px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
-                  SPESIAL
-                </span>
-                <h2 className="text-xl sm:text-2xl font-bold mt-2">Cemilan Kekinian Serba 5.000 !!</h2>
-                <p className="text-white/90 mt-1 text-sm sm:text-base">Setiap pembelian 3 porsi gratis 1</p>
-              </div>
-              <button className="bg-white text-gray-800 px-4 sm:px-6 py-2 rounded-full font-medium text-sm">
-                Lihat Promo
-              </button>
-            </div>
-            <div className="absolute right-0 top-0 w-24 sm:w-32 h-24 sm:h-32 bg-white bg-opacity-10 rounded-full -mr-12 sm:-mr-16 -mt-12 sm:-mt-16"></div>
-            <div className="absolute right-6 sm:right-8 bottom-0 w-16 sm:w-20 h-16 sm:h-20 bg-white bg-opacity-10 rounded-full -mb-8 sm:-mb-10"></div>
-          </div>
+          <ChevronDown className="w-4 h-4 text-sky-500" />
         </div>
       </div>
 
@@ -176,21 +154,21 @@ export default function Home() {
       <div className="bg-white px-3 sm:px-4 py-3 sm:py-4 mt-2 sm:mt-4">
         <div className="flex items-center justify-between mb-3 sm:mb-4">
           <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-blue-600 to-black rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-sky-400 to-sky-600 rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-white font-bold text-xs sm:text-sm">B</span>
             </div>
             <div className="min-w-0 flex-1">
-              <h1 className="text-lg sm:text-xl font-bold text-gray-800 truncate">Cakwe Medan Kranji</h1>
+              <h1 className="text-lg sm:text-xl font-bold text-sky-800 truncate">Cakwe Medan Kranji</h1>
               <div className="flex items-center gap-2 mt-1 flex-wrap">
-                <span className="bg-gradient-to-r from-blue-600 to-black text-white px-2 py-1 rounded text-xs font-medium flex items-center gap-1 whitespace-nowrap">
+                <span className="bg-gradient-to-r from-sky-400 to-sky-600 text-white px-2 py-1 rounded text-xs font-medium flex items-center gap-1 whitespace-nowrap">
                   <span>👍</span>
                   Super Nagih
                 </span>
-                <span className="text-xs sm:text-sm text-gray-600">Fast food, Snacks</span>
+                <span className="text-xs sm:text-sm text-sky-600">Fast food, Snacks</span>
               </div>
             </div>
           </div>
-          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0" />
+          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 flex-shrink-0" />
         </div>
 
         {/* Restaurant Stats - Mobile Optimized */}
@@ -198,53 +176,53 @@ export default function Home() {
           <div className="p-2 sm:p-1">
             <div className="flex items-center justify-center gap-1 mb-1">
               <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 fill-current" />
-              <span className="font-bold text-gray-800 text-sm sm:text-base">4.8</span>
+              <span className="font-bold text-sky-800 text-sm sm:text-base">4.8</span>
             </div>
-            <span className="text-xs text-blue-600 font-medium">Reviews</span>
+            <span className="text-xs text-sky-600 font-medium">Reviews</span>
           </div>
           <div className="p-2 sm:p-1">
             <div className="flex items-center justify-center gap-1 mb-1">
-              <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-red-500" />
-              <span className="font-bold text-gray-800 text-sm sm:text-base">4.74 km</span>
+              <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-sky-500" />
+              <span className="font-bold text-sky-800 text-sm sm:text-base">4.74 km</span>
             </div>
-            <span className="text-xs text-gray-600">Distance</span>
+            <span className="text-xs text-sky-600">Distance</span>
           </div>
           <div className="p-2 sm:p-1">
             <div className="mb-1">
-              <span className="font-bold text-gray-800 text-sm sm:text-base">$$$</span>
-              <span className="text-gray-300">$</span>
+              <span className="font-bold text-sky-800 text-sm sm:text-base">$$$</span>
+              <span className="text-sky-300">$</span>
             </div>
-            <span className="text-xs text-gray-600">5k-10k</span>
+            <span className="text-xs text-sky-600">5k-10k</span>
           </div>
           <div className="p-2 sm:p-1">
             <div className="flex items-center justify-center gap-1 mb-1">
-              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full flex items-center justify-center">
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-sky-500 rounded-full flex items-center justify-center">
                 <span className="text-white text-xs font-bold">✓</span>
               </div>
-              <span className="font-bold text-gray-800 text-sm sm:text-base">Halal</span>
+              <span className="font-bold text-sky-800 text-sm sm:text-base">Halal</span>
             </div>
-            <span className="text-xs text-gray-600">Certified</span>
+            <span className="text-xs text-sky-600">Certified</span>
           </div>
         </div>
       </div>
 
       {/* The People's Favorites - Mobile Optimized */}
       <div className="bg-white px-3 sm:px-4 py-4 sm:py-6 mt-2 sm:mt-4">
-        <h2 className="text-lg font-bold text-gray-800 mb-4 sm:mb-6">Cemilan's favorites</h2>
+        <h2 className="text-lg font-bold text-sky-800 mb-4 sm:mb-6">Cemilan's favorites</h2>
         <div className="space-y-4 sm:space-y-6">
           {topPicks.map((product, index) => (
             <div key={index} className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-gray-800 text-sm sm:text-base mb-1">{product.name}</h3>
-                <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 leading-relaxed line-clamp-2">
+                <h3 className="font-semibold text-sky-800 text-sm sm:text-base mb-1">{product.name}</h3>
+                <p className="text-xs sm:text-sm text-sky-600 mb-2 sm:mb-3 leading-relaxed line-clamp-2">
                   {product.description}
                 </p>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="font-bold text-gray-800 text-sm sm:text-base">
+                  <span className="font-bold text-sky-800 text-sm sm:text-base">
                     Rp {product.price.toLocaleString("id-ID")}
                   </span>
                 </div>
-                <div className="flex items-center gap-1 text-xs text-gray-500">
+                <div className="flex items-center gap-1 text-xs text-sky-500">
                   <span>🍽️</span>
                   <span>Customizable</span>
                 </div>
@@ -260,7 +238,7 @@ export default function Home() {
                 </div>
                 <button
                   onClick={() => addToCart(product)}
-                  className="border-2 border-blue-600 text-blue-600 px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-blue-50 transition-colors min-w-[60px] sm:min-w-[80px]"
+                  className="border-2 border-sky-500 text-sky-600 px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-sky-50 transition-colors min-w-[60px] sm:min-w-[80px]"
                 >
                   Add
                 </button>
@@ -273,11 +251,11 @@ export default function Home() {
       {/* Customer Reviews Section - Mobile Optimized */}
       <div className="bg-white px-3 sm:px-4 py-4 sm:py-6 mt-2 sm:mt-4">
         <div className="flex items-center justify-between mb-4 sm:mb-6">
-          <h2 className="text-lg font-bold text-gray-800">Ulasan Pelanggan</h2>
+          <h2 className="text-lg font-bold text-sky-800">Ulasan Pelanggan</h2>
           <div className="flex items-center gap-1 sm:gap-2">
             <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 fill-current" />
-            <span className="font-bold text-gray-800 text-sm sm:text-base">4.8</span>
-            <span className="text-xs sm:text-sm text-gray-600">(127)</span>
+            <span className="font-bold text-sky-800 text-sm sm:text-base">4.8</span>
+            <span className="text-xs sm:text-sm text-sky-600">(127)</span>
           </div>
         </div>
 
@@ -287,16 +265,16 @@ export default function Home() {
             {[5, 4, 3, 2, 1].map((star) => (
               <div key={star} className="flex flex-col items-center">
                 <div className="flex items-center gap-0.5 sm:gap-1">
-                  <span className="text-xs text-gray-600">{star}</span>
+                  <span className="text-xs text-sky-600">{star}</span>
                   <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-yellow-500 fill-current" />
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-1 mt-1">
+                <div className="w-full bg-sky-100 rounded-full h-1 mt-1">
                   <div
-                    className="bg-blue-600 h-1 rounded-full"
+                    className="bg-sky-500 h-1 rounded-full"
                     style={{ width: star === 5 ? "80%" : star === 4 ? "15%" : "5%" }}
                   ></div>
                 </div>
-                <span className="text-xs text-gray-500 mt-1">{star === 5 ? "102" : star === 4 ? "19" : "6"}</span>
+                <span className="text-xs text-sky-500 mt-1">{star === 5 ? "102" : star === 4 ? "19" : "6"}</span>
               </div>
             ))}
           </div>
@@ -305,7 +283,7 @@ export default function Home() {
         {/* Reviews List - Mobile Optimized */}
         <div className="space-y-3 sm:space-y-4">
           {reviews.map((review, index) => (
-            <div key={index} className="border-b border-gray-100 pb-3 sm:pb-4 last:border-b-0">
+            <div key={index} className="border-b border-sky-100 pb-3 sm:pb-4 last:border-b-0">
               <div className="flex items-start gap-2 sm:gap-3">
                 <Image
                   src={review.avatar || "/placeholder.svg"}
@@ -316,33 +294,33 @@ export default function Home() {
                 />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-semibold text-gray-800 text-xs sm:text-sm truncate">{review.name}</h4>
-                    <span className="text-xs text-gray-500 flex-shrink-0">{review.date}</span>
+                    <h4 className="font-semibold text-sky-800 text-xs sm:text-sm truncate">{review.name}</h4>
+                    <span className="text-xs text-sky-500 flex-shrink-0">{review.date}</span>
                   </div>
                   <div className="flex items-center gap-0.5 sm:gap-1 mb-2">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
                         className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${
-                          i < review.rating ? "text-yellow-500 fill-current" : "text-gray-300"
+                          i < review.rating ? "text-yellow-500 fill-current" : "text-sky-200"
                         }`}
                       />
                     ))}
                   </div>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{review.comment}</p>
+                  <p className="text-xs sm:text-sm text-sky-600 leading-relaxed">{review.comment}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <button className="w-full mt-3 sm:mt-4 py-3 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50 transition-colors text-sm sm:text-base">
+        <button className="w-full mt-3 sm:mt-4 py-3 border border-sky-300 rounded-lg text-sky-700 font-medium hover:bg-sky-50 transition-colors text-sm sm:text-base">
           Lihat Semua Ulasan
         </button>
       </div>
 
       {/* Footer Section - Mobile Optimized */}
-      <footer className="bg-gradient-to-r from-blue-600 to-black text-white mt-4 sm:mt-8">
+      <footer className="bg-gradient-to-r from-sky-400 to-sky-600 text-white mt-4 sm:mt-8">
         <div className="max-w-6xl mx-auto px-3 sm:px-4 py-8 sm:py-12">
           <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
             {/* Left Content */}
@@ -350,7 +328,7 @@ export default function Home() {
               {/* Logo */}
               <div className="flex items-center gap-2 sm:gap-3">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-lg sm:text-xl">B</span>
+                  <span className="text-sky-600 font-bold text-lg sm:text-xl">B</span>
                 </div>
                 <span className="text-xl sm:text-2xl font-bold">BAGOJO</span>
               </div>
@@ -398,7 +376,7 @@ export default function Home() {
               <div className="flex flex-col gap-3 sm:gap-4">
                 <a
                   href="#"
-                  className="bg-black text-white px-4 sm:px-6 py-3 rounded-lg flex items-center gap-2 sm:gap-3 hover:bg-gray-800 transition-colors"
+                  className="bg-white text-sky-600 px-4 sm:px-6 py-3 rounded-lg flex items-center gap-2 sm:gap-3 hover:bg-sky-50 transition-colors"
                 >
                   <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
@@ -412,7 +390,7 @@ export default function Home() {
                 </a>
                 <a
                   href="#"
-                  className="bg-black text-white px-4 sm:px-6 py-3 rounded-lg flex items-center gap-2 sm:gap-3 hover:bg-gray-800 transition-colors"
+                  className="bg-white text-sky-600 px-4 sm:px-6 py-3 rounded-lg flex items-center gap-2 sm:gap-3 hover:bg-sky-50 transition-colors"
                 >
                   <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
@@ -428,11 +406,11 @@ export default function Home() {
 
               {/* Language Selector */}
               <div className="relative inline-block">
-                <select className="bg-white text-gray-800 px-3 sm:px-4 py-2 rounded-full pr-6 sm:pr-8 appearance-none cursor-pointer text-sm sm:text-base">
+                <select className="bg-white text-sky-800 px-3 sm:px-4 py-2 rounded-full pr-6 sm:pr-8 appearance-none cursor-pointer text-sm sm:text-base">
                   <option>🇮🇩 Bahasa Indonesia</option>
                   <option>🇺🇸 English</option>
                 </select>
-                <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 sm:w-4 sm:h-4 text-gray-600 pointer-events-none" />
+                <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 sm:w-4 sm:h-4 text-sky-600 pointer-events-none" />
               </div>
             </div>
 
@@ -463,7 +441,7 @@ export default function Home() {
           </div>
 
           {/* Footer Links - Mobile Optimized */}
-          <div className="border-t border-blue-500 mt-8 sm:mt-12 pt-6 sm:pt-8">
+          <div className="border-t border-sky-300 mt-8 sm:mt-12 pt-6 sm:pt-8">
             <div className="flex flex-col gap-4 sm:gap-6">
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-xs sm:text-sm">
                 <a href="#" className="hover:underline opacity-90 hover:opacity-100">
@@ -500,8 +478,8 @@ export default function Home() {
       {/* Bottom Order Button - With Shimmer Animation */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-3 sm:p-4 z-40 safe-area-pb">
         <a
-          href="#order-form" // Ganti dengan URL atau ID yang diinginkan
-          className="w-full bg-gradient-to-r from-blue-600 to-black text-white py-3 sm:py-3 rounded-lg font-medium flex items-center justify-center gap-2 text-sm sm:text-base min-h-[48px] shimmer-effect hover:from-blue-700 hover:to-gray-900 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+          href="#order-form"
+          className="w-full bg-gradient-to-r from-sky-400 to-sky-600 text-white py-3 sm:py-3 rounded-lg font-medium flex items-center justify-center gap-2 text-sm sm:text-base min-h-[48px] shimmer-effect hover:from-sky-500 hover:to-sky-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
         >
           Pesan Sekarang!
         </a>
@@ -517,13 +495,7 @@ export default function Home() {
         rel="noopener noreferrer"
         className="fixed bottom-[84px] sm:bottom-24 right-3 sm:right-4 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 min-w-[48px] min-h-[48px] flex items-center justify-center whatsapp-glow transition-all duration-300 transform hover:scale-110 active:scale-95"
       >
-        <Image
-          src="/images/whatsapp.png"
-          alt="WhatsApp"
-          width={20}
-          height={20}
-          className="h-5 w-5 sm:h-6 sm:w-6"
-        />
+        <Image src="/images/whatsapp.png" alt="WhatsApp" width={20} height={20} className="h-5 w-5 sm:h-6 sm:w-6" />
       </a>
     </main>
   )
