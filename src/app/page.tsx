@@ -2,7 +2,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import ProductCard from "@/components/ProductCard"
-import { Star, MapPin, ThumbsUp, Soup } from 'lucide-react'
+import { Star, MapPin, ThumbsUp, Soup } from "lucide-react"
 import PromoBanner from "@/components/PromoBanner"
 
 type Product = {
@@ -77,19 +77,15 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-x-hidden flex flex-col bg-gradient-to-b from-blue-100 to-white">
-      {/* PromoBanner - Fixed di paling atas */}
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <PromoBanner />
-      </div>
-      {/* Header - Fixed tepat di bawah PromoBanner */}
-      <div className="fixed top-[36px] left-0 right-0 z-40 bg-white shadow-md">
+      {/* Header - Fixed di paling atas tanpa promo banner */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
         <div className="px-3 py-2 max-w-full">
           {/* Desktop Layout */}
           <div className="hidden sm:block">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-3">
                 <Image
-                  src="https://i.ibb.co/4Qkft5z/logo-bagojo.png"
+                  src="/images//logo-bagojo.png"
                   alt="Logo Bagojo"
                   width={32}
                   height={32}
@@ -147,7 +143,7 @@ export default function Home() {
                     </span>
                     <div className="flex items-center gap-1">
                       <Star className="text-yellow-500 w-3 h-3" />
-                      <span className="font-semibold">4.7</span>
+                      <span className="font-semibold">4.9</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin className="text-red-500 w-3 h-3" />
@@ -167,9 +163,15 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Spacer untuk memberikan ruang karena header sekarang fixed */}
-      <div className="h-[36px]"></div> {/* Space untuk PromoBanner */}
-      <div className="h-[70px] sm:h-[100px]"></div> {/* Space untuk Header - lebih kecil di mobile */}
+
+      {/* Spacer untuk header */}
+      <div className="h-[70px] sm:h-[100px]"></div>
+
+      {/* Promo Banner - Dipindah ke bawah header */}
+      <div className="w-full">
+        <PromoBanner />
+      </div>
+
       <div className="overflow-x-auto whitespace-nowrap py-4 px-4">
         <div className="container">
           {["Semua", "Gorengan", "Minuman"].map((cat, idx) => (
@@ -183,6 +185,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+
       <div className="container py-6 space-y-6">
         <h2 className="text-lg font-semibold text-gray-800">Cemilan's Top Picks</h2>
         <div className="flex overflow-x-auto space-x-4 py-2">
@@ -199,6 +202,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+
       <div className="container py-6 space-y-6">
         <h2 className="text-lg font-semibold text-gray-800">Menu Kategori: {activeCategory}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -214,6 +218,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+
       <div className="container py-6">
         <h2 className="text-lg font-semibold text-gray-800 mb-4 text-center">Lokasi Cakwe Medan Kami</h2>
         <div className="w-full h-64">
@@ -229,6 +234,7 @@ export default function Home() {
           ></iframe>
         </div>
       </div>
+
       <footer className="bg-[#ee3131] text-white py-10 mt-10 text-center text-sm">
         <div className="container space-y-4">
           <h3 className="text-lg sm:text-xl font-bold">
@@ -258,6 +264,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
       <a
         href="https://wa.me/6281299686378"
         target="_blank"
