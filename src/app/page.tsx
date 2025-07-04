@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react"
-import Image from "next/image"
 import ProductCard from "@/components/ProductCard"
 import { Star, MapPin, ThumbsUp, Soup, Wallet } from "lucide-react"
 import PromoBanner from "@/components/PromoBanner"
@@ -77,13 +76,9 @@ export default function Home() {
 
       <header className="sticky top-[36px] z-50 bg-white shadow">
         <div className="container p-4 space-y-4 text-center">
-          <Image
-            src="https://i.ibb.co/4Qkft5z/logo-bagojo.png"
-            alt="Logo Bagojo"
-            width={48}
-            height={48}
-            className="h-12 w-auto mx-auto"
-          />
+          <div className="h-12 w-auto mx-auto bg-red-600 text-white rounded-lg flex items-center justify-center px-4">
+            <span className="font-bold text-lg">BAGOJO</span>
+          </div>
           <div className="text-xs text-gray-500">
             Beranda / Bekasi / <span className="text-gray-800 font-medium">Cakwe Medan</span>
           </div>
@@ -220,20 +215,8 @@ export default function Home() {
           </h3>
           <p>Nikmati BAKSO GORENG Ayam Udang dan CAKWE MEDAN rasa PREMIUM. #Makin di Gigit Makin Nagih!</p>
           <div className="flex justify-center gap-4">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-              alt="Get it on Google Play"
-              width={120}
-              height={40}
-              className="h-10"
-            />
-            <Image
-              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-              alt="Download on the App Store"
-              width={120}
-              height={40}
-              className="h-10"
-            />
+            <div className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm">📱 Download di Google Play</div>
+            <div className="bg-black text-white px-4 py-2 rounded-lg text-sm">🍎 Download di App Store</div>
           </div>
           <div className="text-xs text-white/80 mt-6">
             © 2025 BAGOJO | Cakwe Medan Bagojo berlokasi di Kranji, Bekasi Barat.
@@ -247,13 +230,7 @@ export default function Home() {
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-50 animate-bounce bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg"
       >
-        <Image
-          src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
-          alt="WhatsApp"
-          width={32}
-          height={32}
-          className="h-8 w-8"
-        />
+        <span className="text-2xl">💬</span>
       </a>
     </main>
   )
