@@ -1,5 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface ProductCardProps {
   name: string;
@@ -18,12 +19,14 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden">
-      <img
-        src={`/images/${image}`}
+      <Image
+        src={image}
         alt={name}
+        width={400}
+        height={300}
         className="w-full h-48 object-cover"
         onError={(e) => {
-          e.currentTarget.src = "/images/default.webp"; // fallback jika gambar tidak ditemukan
+          e.currentTarget.src = "/images/default.webp"; // fallback jika gambar gagal dimuat
         }}
       />
       <div className="p-4 space-y-2">
