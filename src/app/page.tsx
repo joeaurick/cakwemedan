@@ -1,34 +1,26 @@
-'use client';
-
-import { useState } from 'react';
-import ProductCard from "@/components/ProductCard";
-import { ShoppingCart, X, Star, MapPin, ThumbsUp, Soup, Wallet } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { cn } from "@/lib/utils";
-import PromoBanner from "@/components/PromoBanner";
+"use client"
+import { useState } from "react"
+import Image from "next/image"
+import ProductCard from "@/components/ProductCard"
+import { Star, MapPin, ThumbsUp, Soup, Wallet } from "lucide-react"
+import PromoBanner from "@/components/PromoBanner"
 
 type Product = {
-  name: string;
-  description: string;
-  image: string;
-  price: number;
-  category?: string;
-};
+  name: string
+  description: string
+  image: string
+  price: number
+  category?: string
+}
 
 export default function Home() {
-  console.log("✅ Home Page Loaded");
-  
-  const [cartItems, setCartItems] = useState<Product[]>([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("Semua");
+  console.log("✅ Home Page Loaded")
+  const [cartItems, setCartItems] = useState<Product[]>([])
+  const [activeCategory, setActiveCategory] = useState("Semua")
 
   const addToCart = (product: Product) => {
-    setCartItems([...cartItems, product]);
-  };
-
-  const getTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price, 0);
-  };
+    setCartItems([...cartItems, product])
+  }
 
   const products = [
     {
@@ -51,12 +43,11 @@ export default function Home() {
       image: "/images/es-liang-teh.webp",
       price: 5000,
       category: "Minuman",
-    }
-  ];
+    },
+  ]
 
-  const filteredProducts = activeCategory === "Semua"
-    ? products
-    : products.filter(product => product.category === activeCategory);
+  const filteredProducts =
+    activeCategory === "Semua" ? products : products.filter((product) => product.category === activeCategory)
 
   const topPicks = [
     {
@@ -76,8 +67,8 @@ export default function Home() {
       description: "Minuman herbal khas Medan, dengan rasa manis yang khas.",
       image: "/images/es-liang-teh.webp",
       price: 5000,
-    }
-  ];
+    },
+  ]
 
   return (
     <main className="min-h-screen overflow-x-hidden flex flex-col bg-gradient-to-b from-blue-100 to-white">
@@ -86,9 +77,11 @@ export default function Home() {
 
       <header className="sticky top-[36px] z-50 bg-white shadow">
         <div className="container p-4 space-y-4 text-center">
-          <img
+          <Image
             src="https://i.ibb.co/4Qkft5z/logo-bagojo.png"
             alt="Logo Bagojo"
+            width={48}
+            height={48}
             className="h-12 w-auto mx-auto"
           />
           <div className="text-xs text-gray-500">
@@ -97,7 +90,9 @@ export default function Home() {
           <h1 className="text-lg sm:text-xl font-bold text-gray-800">Cakwe Medan Kranji - Bekasi</h1>
           <p className="text-sm text-red-500 font-medium">🔴 Tutup – Buka jam 12.00 - 21.00</p>
           <div className="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
-            <span className="bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-semibold text-xs">Super Nagih</span>
+            <span className="bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-semibold text-xs">
+              Super Nagih
+            </span>
             <span>• Cepat saji</span>
             <span>• Jajanan</span>
             <span>• Gurih</span>
@@ -155,10 +150,12 @@ export default function Home() {
 
       <div className="overflow-x-auto whitespace-nowrap py-4 px-4">
         <div className="container">
-          {['Semua', 'Gorengan', 'Minuman'].map((cat, idx) => (
+          {["Semua", "Gorengan", "Minuman"].map((cat, idx) => (
             <button
               key={idx}
-              className={`inline-block text-sm px-4 py-2 mx-1 rounded-full border ${activeCategory === cat ? 'bg-blue-600 text-white' : 'border-blue-600 text-blue-600'} hover:bg-blue-600 hover:text-white transition`}
+              className={`inline-block text-sm px-4 py-2 mx-1 rounded-full border ${
+                activeCategory === cat ? "bg-blue-600 text-white" : "border-blue-600 text-blue-600"
+              } hover:bg-blue-600 hover:text-white transition`}
               onClick={() => setActiveCategory(cat)}
             >
               {cat}
@@ -218,17 +215,23 @@ export default function Home() {
 
       <footer className="bg-[#ee3131] text-white py-10 mt-10 text-center text-sm">
         <div className="container space-y-4">
-          <h3 className="text-xl font-bold">Gak perlu repot lagi buat ngemanjain lidahmu, tinggal ketik BAGOJO di Google kesayangan!</h3>
+          <h3 className="text-xl font-bold">
+            Gak perlu repot lagi buat ngemanjain lidahmu, tinggal ketik BAGOJO di Google kesayangan!
+          </h3>
           <p>Nikmati BAKSO GORENG Ayam Udang dan CAKWE MEDAN rasa PREMIUM. #Makin di Gigit Makin Nagih!</p>
           <div className="flex justify-center gap-4">
-            <img
+            <Image
               src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
               alt="Get it on Google Play"
+              width={120}
+              height={40}
               className="h-10"
             />
-            <img
+            <Image
               src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
               alt="Download on the App Store"
+              width={120}
+              height={40}
               className="h-10"
             />
           </div>
@@ -244,12 +247,14 @@ export default function Home() {
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-50 animate-bounce bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg"
       >
-        <img
+        <Image
           src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
           alt="WhatsApp"
+          width={32}
+          height={32}
           className="h-8 w-8"
         />
       </a>
     </main>
-  );
+  )
 }

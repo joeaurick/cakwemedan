@@ -1,7 +1,7 @@
 export default function PromoBanner() {
   return (
-    <div className="bg-yellow-100 text-yellow-800 text-sm text-center py-2 font-medium">
-      🎉 Promo Hari Ini: Beli 3 Gratis 1 untuk semua varian cakwe & bakso goreng!
+    <div className="bg-red-600 text-white text-center py-2 px-4 text-sm font-medium">
+      🎉 Promo Spesial! Beli 2 Gratis 1 untuk semua menu gorengan!
     </div>
-  );
+  )
 }
