@@ -20,13 +20,16 @@ export default function ProductCard({
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden">
       <Image
-        src={image}
-        alt={name}
-        width={400}
-        height={300}
-        className="w-full h-48 object-cover"
-        unoptimized // gunakan ini agar image tidak harus dari remote
-      />
+  src={image.startsWith("/") ? image : `/images/${image}`}
+  alt={name}
+  width={400}
+  height={300}
+  className="w-full h-48 object-cover"
+  onError={(e) => {
+    const target = e.currentTarget as HTMLImageElement;
+    target.src = "/images/default.webp"; // fallback manual
+  }}
+/>
       <div className="p-4 space-y-2">
         <h3 className="text-lg font-semibold">{name}</h3>
         <p className="text-gray-500 text-sm">{description}</p>
