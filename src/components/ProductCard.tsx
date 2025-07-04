@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -5,7 +6,7 @@ import Image from "next/image";
 interface ProductCardProps {
   name: string;
   description: string;
-  image: string; // format: "/images/namafile.webp"
+  image: string;
   price: number;
   onOrder: () => void;
 }
@@ -17,19 +18,18 @@ export default function ProductCard({
   price,
   onOrder,
 }: ProductCardProps) {
+  const [imgSrc, setImgSrc] = useState(image);
+
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden">
       <Image
-  src={image.startsWith("/") ? image : `/images/${image}`}
-  alt={name}
-  width={400}
-  height={300}
-  className="w-full h-48 object-cover"
-  onError={(e) => {
-    const target = e.currentTarget as HTMLImageElement;
-    target.src = "/images/default.webp"; // fallback manual
-  }}
-/>
+        src={imgSrc}
+        alt={name}
+        width={400}
+        height={300}
+        onError={() => setImgSrc("/images/default.webp")}
+        className="w-full h-48 object-cover"
+      />
       <div className="p-4 space-y-2">
         <h3 className="text-lg font-semibold">{name}</h3>
         <p className="text-gray-500 text-sm">{description}</p>
