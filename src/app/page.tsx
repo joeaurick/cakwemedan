@@ -25,21 +25,21 @@ export default function Home() {
     {
       name: "Cakwe Medan",
       description: "Cakwe gurih dan renyah khas Medan Asli lembut dan tidak keras.",
-      image: "/images/cakwe-medan.webp",
+      image: "/images/cakwe-medan.jpg",
       price: 5000,
       category: "Gorengan",
     },
     {
       name: "Bakso Goreng",
       description: "Bakso goreng isi ayam udang, dengan tekstur sedikit kopong.",
-      image: "/images/bakso-goreng-ayam-udang.webp",
+      image: "/images/bakso-goreng-ayam-udang.jpg",
       price: 5000,
       category: "Gorengan",
     },
     {
       name: "Es Liang Teh",
       description: "Minuman herbal khas Medan, dengan rasa manis yang khas.",
-      image: "/images/es-liang-teh.webp",
+      image: "/images/es-liang-teh.jpg",
       price: 5000,
       category: "Minuman",
     },
@@ -52,19 +52,19 @@ export default function Home() {
     {
       name: "Cakwe Medan",
       description: "Cakwe gurih dan renyah khas Medan Asli lembut dan tidak keras.",
-      image: "/images/cakwe-medan.webp",
+      image: "/images/cakwe-medan.jpg",
       price: 5000,
     },
     {
       name: "Bakso Goreng",
       description: "Bakso goreng isi ayam udang, dengan tekstur sedikit kopong.",
-      image: "/images/bakso-goreng-ayam-udang.webp",
+      image: "/images/bakso-goreng-ayam-udang.jpg",
       price: 5000,
     },
     {
       name: "Es Liang Teh",
       description: "Minuman herbal khas Medan, dengan rasa manis yang khas.",
-      image: "/images/es-liang-teh.webp",
+      image: "/images/es-liang-teh.jpg",
       price: 5000,
     },
   ]
