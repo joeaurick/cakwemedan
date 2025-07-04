@@ -83,7 +83,7 @@ export default function Home() {
       <header className="sticky top-[36px] z-50 bg-white shadow">
         <div className="container p-4 space-y-4 text-center">
           <Image
-            src="https://i.ibb.co/4Qkft5z/logo-bagojo.png"
+            src="/images/logo-bagojo.png"
             alt="Logo Bagojo"
             width={48}
             height={48}
@@ -251,7 +251,7 @@ export default function Home() {
         className="fixed bottom-5 right-5 z-50 animate-bounce bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg"
       >
         <Image
-          src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
+          src="/images/whatsapp.png"
           alt="WhatsApp"
           width={32}
           height={32}
